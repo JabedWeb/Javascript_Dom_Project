@@ -1,0 +1,103 @@
+
+/* Path: style.css */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    flex-direction: column;
+}
+h1 {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff; 
+}
+#btn-changed{
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 24px;
+}
+#btn-changed:hover{
+    background-color: #fff;
+    color: #000;
+
+}
+
+#copyBtn,
+#copyBtnHexa{
+    background-color: #000;
+    color: #fff;
+    font-size: 24px;
+    border: 1px solid #fff;
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+input {
+    background-color: #000;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #fff;
+    padding: 10px 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.toast {
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 20px;
+    top: 30px;
+    font-size: 17px;
+}
+
+.toast_in {
+    animation: toast_in 0.5s ease-in;
+}
+@keyframes toast_in {
+    from {top: 0; opacity: 0;}
+    to {top: 30px; opacity: 1;}
+}
+
+
+/* responsive */
+
+@media screen and (max-width: 768px) {
+    .RGB,
+    .Hexa {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
