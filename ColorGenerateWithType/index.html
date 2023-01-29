@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Generate</title>
+    <title>Generate Color From Input</title>
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/jpg" href="favicon.jpg"/>
@@ -17,16 +17,22 @@
 
     <div class="container" id="root">
         <h1 id="text">The Color is Changed for every Click </h1>
-        <div class="RGB" id="rgba_input">
+        <div class="RGB" >
 
-            <input id="output" type="text" disabled value="rgb(255,255,255)">
+            <div id="rgba_input">
+                <input id="output" type="text" disabled value="rgb(255,255,255)">
+            </div>
+
+            
             <button id="copyBtn">Copy</button>
 
         </div>
 
-        <div class="Hexa" id="hexa_input">
+        <div class="Hexa" >
 
-            <input id="output_Hexa" type="text" value="#FFFFFF">
+            <div id="hexa_input">
+                <input id="output_Hexa" type="text" value="#FFFFFF">
+            </div>
             <button id="copyBtnHexa">Copy</button>
 
         </div>

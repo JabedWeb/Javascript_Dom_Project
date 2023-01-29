@@ -51,14 +51,14 @@
        })
 
        //copy the color rgb from the output
-       rgba_input.addEventListener('click', function (e) {
-           if (div != null) {
-               div.remove();
-               div = null;
-           }
-           toastMessage(`Copied ${output.value}`)
-           navigator.clipboard.writeText(output.value);
-       })
+    //    rgba_input.addEventListener('click', function (e) {
+    //        if (div != null) {
+    //            div.remove();
+    //            div = null;
+    //        }
+    //        toastMessage(`Copied ${output.value}`)
+    //        navigator.clipboard.writeText(output.value);
+    //    })
 
        //copy the color hexa
 
@@ -69,19 +69,37 @@
                div.remove();
                div = null;
            }
-           toastMessage(`Copied ${output_Hexa.value}`)
+           console.log((output_Hexa.value).length);
+           if ((output_Hexa.value).length == 7) {
+               console.log((output_Hexa.value).length);
+               toastMessage(`Copied ${output_Hexa.value}`)
+
+           } else {
+               toastMessage('Invalid Hexa Color');
+           }
        })
 
        //copy the color hexa From the input
-       hexa_input.addEventListener('click', function () {
-           navigator.clipboard.writeText(output_Hexa.value);
+    //    hexa_input.addEventListener('click', function () {
+    //        navigator.clipboard.writeText(output_Hexa.value);
 
-           if (div != null) {
-               div.remove();
-               div = null;
+    //        if (div != null) {
+    //            div.remove();
+    //            div = null;
+    //        }
+    //        toastMessage(`Copied ${output_Hexa.value}`)
+    //    })
+
+       //change the color from the input
+       output_Hexa.addEventListener('keyup', function (e) {
+           let color = e.target.value;
+           if (color && isValidHex(color)) {
+               hexToRgb(color);
+               text.style.color = color;
+               root.style.backgroundColor = color;
            }
-           toastMessage(`Copied ${output_Hexa.value}`)
        })
+
        //toast message function
        function toastMessage(message) {
            div = document.createElement('div');
@@ -92,4 +110,28 @@
                div.remove();
                div = null;
            }, 5000)
+       }
+
+       function isValidHex(color) {
+           if (color.length != 7) {
+               return false;
+           }
+           if (color[0] != '#') {
+               return false;
+           }
+           //regex
+           let regex = /^[0-9A-Fa-f]{6}$/i;
+           if (regex.test(color.substring(1))) {
+               return true;
+           }
+       }
+       //hexa to rgb
+
+       function hexToRgb(color) {
+           let red = parseInt(color.substring(1, 3), 16);
+           let green = parseInt(color.substring(3, 5), 16);
+           let blue = parseInt(color.substring(5, 7), 16);
+           if (isValidHex(color)) {
+               output.value = `rgb(${red},${green},${blue})`;
+           }
        }

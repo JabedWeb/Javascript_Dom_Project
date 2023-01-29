@@ -18,6 +18,14 @@
     background-color: #000;
     flex-direction: column;
 }
+
+.Hexa,
+.RGB {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 9px;
+}
 h1 {
     color: #fff;
     font-size: 50px;
@@ -51,9 +59,11 @@ h1 {
     padding: 10px 10px;
     border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 10px;
+    margin-bottom: 17px;
     transition: all 0.3s ease;
 }
+
+
 
 input {
     background-color: #000;
