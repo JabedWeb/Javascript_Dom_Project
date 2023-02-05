@@ -1,6 +1,4 @@
        var div = null;
-
-
        // //get the element
        var btn = document.getElementById('btn-changed');
        var text = document.getElementById('text');
@@ -134,4 +132,18 @@
            if (isValidHex(color)) {
                output.value = `rgb(${red},${green},${blue})`;
            }
-       }
+       }  
+
+
+      
+
+
+
+       
+jQuery(document).ready(function() {
+    jQuery("#wpforms-776-field_23-container > div > button").click(function(){
+        var forms = document.querySelector('#wpforms-776-field_4');
+        alert(forms.value);
+      });
+ });
+       
