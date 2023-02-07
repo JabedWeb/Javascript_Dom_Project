@@ -2,6 +2,7 @@ let cartProducts=[
     {
         name: 'samsung s5',
         price: 45000,
+        
         camera: 10,
         storage: 32
     },
@@ -16,6 +17,7 @@ let cartProducts=[
         price: 8000,
         camera: 5,
         storage: 8
+
     }
 ]
 
