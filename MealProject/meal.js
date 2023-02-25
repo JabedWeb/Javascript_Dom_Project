@@ -1,4 +1,5 @@
 const meals = (category) => {
+
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${category}`)
         .then(res => res.json())
         .then(data => mealsDisplay(data.meals))
@@ -11,17 +12,6 @@ const mealsDisplay = (mealAll) => {
     meals_container.innerText = ''
 
     mealAll.forEach(meal => {
-
-        // meals_container.innerHTML += `
-        // <div class="col">
-        // <div class="card">
-        //   <img src=${meal.strMealThumb} class="card-img-top" alt="...">
-        //   <div class="card-body">
-        //     <h5 class="card-title">${meal.strMeal}</h5>
-        //     <p class="card-text">${meal.strInstructions}</p>
-        //   </div>
-        // `
-
 
 
         //create child elements 
@@ -85,6 +75,35 @@ document.getElementById('meal_form').addEventListener('keyup', function (e) {
     const search = document.getElementById('search').value;
     meals(search)
 })
+
+
+
+const categoryShow =()=> {
+    fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
+    .then(response => response.json())
+    .then(data => {
+        const button_container = document.getElementById('all_meal_category');
+
+        console.log(data);
+
+        const all_data = data.categories;
+        all_data.forEach((single_category) => {
+            console.log(single_category.strCategory);
+            const button = document.createElement('button');
+            button.classList.add('btn', 'btn-primary', 'my-1');
+            button.innerText = single_category.strCategory;
+            button.onclick = function () {
+                meals(single_category.strCategory)
+            };
+
+            button_container.appendChild(button)
+        })
+    })
+}
+
+
+
+categoryShow();
 
 
 meals('fish')
