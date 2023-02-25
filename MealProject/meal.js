@@ -61,7 +61,15 @@ const meals_modal_data = (idMeal) => {
             //title.innerText=data.meals[0].strMeal;
             document.getElementById('meal_details').innerHTML = `
 
+
+
         <img class="img-fluid" src="${data.meals[0].strMealThumb}"></img>
+
+        <div class="d-flex flex-wrap justify-content-between my-3">
+            <button  class="btn btn-primary my-2" >${data.meals[0].strArea}</button>
+            <button  class="btn btn-secondary my-2" >${data.meals[0].strCategory}</button>
+            <button class="btn btn-success my-2" >${data.meals[0].strIngredient1}</button>
+        </div>
 
         <p class="card-text mt-3">${(data.meals[0].strInstructions)}</p>
         
