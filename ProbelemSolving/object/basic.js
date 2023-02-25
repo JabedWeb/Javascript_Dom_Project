@@ -18,3 +18,13 @@ console.log(Object.keys(shoppingCart));
 
 console.log(Object.values(shoppingCart));
 
+
+   
+
+
+let a="hi"
+
+let b="there"
+
+console.log(a+b)
+
